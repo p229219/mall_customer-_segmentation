@@ -1,4 +1,4 @@
-# mall_customer-segmentation
+# Mall_Customer-Segmentation
 
 ## The Challenges:
 *The dataset is a customer database of a mall. It contains 200 observations with basic information such as age, gender, annual income, and spending score. The purpose of this analysis is to uncover underlying patterns in the customer base, and to groups of customers accordingly, often known as market segmentation. In doing so, the marketing team can have a more targeted approach to reach consumers, and the mall can make more informed strategic decisions to increase profits.*
