@@ -10,9 +10,13 @@ The dataset can be downloaded from the kaggle website which can be found https:/
 ## Apporach:
 Understanding the data.
 
-Perform elbow method to find optimal no. of clustering
+Data analysis and EDA
 
-Training a model using unsupervised machine learning
+Visualization
+
+Building model and Training
+
+Perform elbow method to find optimal no. of clustering
 
 Plotting the cluster 
 
@@ -93,6 +97,8 @@ Conclusions
 
 ***male= 44%***
 ***female = 56%***
+![image](https://user-images.githubusercontent.com/114009434/195606453-8b521a58-21d4-4102-b29d-fb53db0508d9.png)
+
 
 ###### **Now it's the moment to visualize our data and plot important information so we can see the different values our data has and its behaviour. To do so, I am going to consider the following features: Annual_income, Spending_score and Age. Gender will only be used to make data sepparation so I can differentiate values for men and women.To begin with, I am plotting the histograms for each of the three features we said we would look into:**
 ![005](https://user-images.githubusercontent.com/114009434/195571686-d7a3351d-2bce-476c-b611-153bd29be1f5.png) ![006](https://user-images.githubusercontent.com/114009434/195571773-6cc99f12-9122-4a4b-985c-e2dfcf9a8b7e.jpg) ![007](https://user-images.githubusercontent.com/114009434/195571835-1a8c395f-dee6-4f3b-8660-bbde485d58b5.jpg)
@@ -118,3 +124,100 @@ Conclusions
 
 ### Tuning the Model :
 When using Kmeans, the number of clusters (k), is a value to be set by the user. There are a few methods to determine the appropriate number of clusters, as shown below
+### Elbow Method:
+
+##### Calculate the Within Cluster Sum of Squared Errors (WSS) for different values of k, and choose the k for which WSS first starts to diminish. In the plot of   WSS-versus k, this is visible as an elbow.The steps can be summarized in the below steps:
+1)***Compute K-Means clustering for different values of K by varying K from 1 to 10 clusters.***
+
+2)***For each K, calculate the total within-cluster sum of square (WCSS).***
+
+3)***Plot the curve of WCSS vs the number of clusters K.***
+
+4)***The location of a bend (knee) in the plot is generally considered as an indicator of the appropriate number of clusters.***
+
+***Within Cluster Sum Of Squares (WCSS) against the the number of clusters (K Value) to figure out the optimal number of clusters value. WCSS measures sum of distances of observations from their cluster centroids which is given by the below formula.***
+      ![image](https://user-images.githubusercontent.com/114009434/195611347-cf63b257-787f-4d33-84fe-2039c32e5b27.png)
+ 
+ ***where Yi is centroid for observation Xi. The main goal is to maximize number of clusters and in limiting case each data point becomes its own cluster centroid.***
+ 
+ ## clustering relationship between age and spending score:
+ ![image](https://user-images.githubusercontent.com/114009434/195612135-cf19f0a2-31f9-420e-8c07-16040e513048.png)
+
+***It is clear from the figure that we should take the number of clusters equal to 4.***
+
+**After getting value of k . now plotting the cluster of the customer on the basis age vs spending score.**
+![image](https://user-images.githubusercontent.com/114009434/195618832-44388864-91f1-4123-b799-bc345b9538df.png)
+
+**Analyzing the Results:**
+
+***1)We can see that the mall customers can be broadly grouped into 4 groups based on their purchases made in the mall***
+        
+        **cluster 1: Blue**
+        **cluster 2: voilet**
+        **cluster 3: Red**
+        **cluster 4: grey**
+
+***2)Each cluster having centriod which is in brown colour***
+
+***3)cluster 1 having highest spending score.***
+
+***4)cluster 2 having moderate spending score but cluster 3 customer age belong to younger than cluster 4.***
+
+***5)cluster 4 having least spending score.***
+
+## Clustering relationship between Annual income and Spending score:
+![image](https://user-images.githubusercontent.com/114009434/195627995-26de25f5-60b2-4a8b-88ca-c7a381c9a120.png)
+
+***It is clear from the figure that we should take the number of clusters equal to 5.***
+
+**After getting value of k . now plotting the cluster of the customer on the income vs spending score.**
+![image](https://user-images.githubusercontent.com/114009434/195628775-dc655fe1-9349-44f8-b472-9225be37267a.png)
+
+**Analyzing the Results:**
+
+***1)We can see that the mall customers can be broadly grouped into 5 groups based on their purchases made in the mall***
+        
+        **cluster 1: Green**
+        **cluster 2: Orange**
+        **cluster 3: Red**
+        **cluster 4: Violet**
+        **cluster 5: Blue**
+
+
+***2)In cluster 1(green-colored) we see that people have high income and high spending scores, this is the ideal case for the mall or shops as these people are the prime sources of profit. These people might be the regular customers of the mall and are convinced by the mall’s facilities.***
+
+***3)In cluster 2(orange colored) we can see that people have low income but higher spending scores, these are those people who for some reason love to buy products more often even though they have a low income. Maybe it’s because these people are more than satisfied with the mall services. The shops/malls might not target these people that effectively but still will not lose them.***
+
+***4)In cluster 3(red colored) we see that people have high income but low spending scores, this is interesting. Maybe these are the people who are unsatisfied or unhappy by the mall’s services. These can be the prime targets of the mall, as they have the potential to spend money. So, the mall authorities will try to add new
+facilities so that they can attract these people and can meet their needs.***
+
+***5)In cluster 4(violet colored) we can see people have low annual income and low spending scores, this is quite reasonable as people having low salaries prefer to buy less, in fact, these are the wise people who know how to spend and save money. The shops/mall will be least interested in people belonging to this cluster.***
+
+***6)In cluster 5(pink colored) we see that people have average income and an average spending score, these people again will not be the prime targets of the shops or mall, but again they will be considered and other data analysis techniques may be used to increase their spending score.***
+
+
+## Clustering relationship between Age ,Annual income and Spending score:
+![image](https://user-images.githubusercontent.com/114009434/195635710-bd5f33bc-093c-481f-987a-92f0ea83fbc1.png)
+
+***It is clear from the figure that we should take the number of clusters equal to 5.***
+
+**After getting value of k . now plotting the cluster of the customer on the age vs annual income vs spending score.**
+![image](https://user-images.githubusercontent.com/114009434/195636397-0001c79e-ad9f-46b7-9fde-51767d037219.png)
+
+## Conclusions:
+
+***1)KMeans Clustering is a powerful technique in order to achieve a decent customer segmentation.***
+
+***2)Customer segmentation is a good way to understand the behaviour of different customers and plan a good marketing strategy accordingly.***
+
+***3)There isn't much difference between the spending score of women and men, which leads us to think that our behaviour when it comes to shopping is pretty similar.***
+
+***4)Observing the clustering graphic, it can be clearly observed that the ones who spend more money in malls are young people. That is to say they are the main target when it comes to marketing, so doing deeper studies about what they are interested in may lead to higher profits.***
+
+***5)Althought younglings seem to be the ones spending the most, we can't forget there are more people we have to consider, like people who belong to the pink cluster, they are what we would commonly name after "middle class" and it seems to be the biggest cluster.***
+
+***6)Promoting discounts on some shops can be something of interest to those who don't actually spend a lot and they may end up spending more***
+
+ 
+ 
+ 
